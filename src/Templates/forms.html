@@ -1,0 +1,19 @@
+<div class="container">
+    <!--    <form method="POST" action=""> {% csrf_token %}-->
+    <!--        <input type="text" name="username" placeholder="username"/> <br/>-->
+    <!--        <input type="text" name="fullname" placeholder="fullname"/> <br/>-->
+    <!--        <input type="text" name="city" placeholder="city"/> <br/>-->
+    <!--        <input type="text" name="q" placeholder="Search"/><br/>-->
+    <!--        <input type="submit" value="Search"/>-->
+    <!--    </form>-->
+    <form method="POST" action=""> {%csrf_token %}
+        <!--        {{form.as_p}}-->
+        {{form.non_field_errors}}
+        <p>{{form.user}}</p>
+        <label for="{{form.sender.id_for_label}}">Your email address:</label>
+        <p>{{form.title.label}} {{form.title}} {{form.title.errors}}</p>
+        <p>{{form.slug}}</p>
+        <p>{{form.image}}</p>
+        <input type="submit" value="Search">
+    </form>
+</div>

@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from blog.views import home
+from blog.views import home, formset_view
 
 urlpatterns = [
-    url(r'^$', home),
+    # url(r'^$', home),
+    url(r'^$', formset_view),
     url(r'^admin/', admin.site.urls),
 ]

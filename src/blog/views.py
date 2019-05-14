@@ -1,8 +1,17 @@
+from django.forms import formset_factory, modelformset_factory
 from django.shortcuts import render
 from .forms import TestForm, PostModelForm
 
 
 # Create your views here.
+def formset_view(request):
+    TestFormSet = formset_factory(TestForm)
+    formset = TestFormSet()
+    context = {
+        'formset': formset
+    }
+    return render(request, 'formset_view.html', context)
+
 
 def home(request):
     form = PostModelForm(request.POST or None)
